@@ -13,6 +13,17 @@ html{
 
 
 body{
-    background-color: red;
     font-size: 1.4rem;
+    background-color: pink;
 }
+
+.container{
+    border: 2px dotted blue;
+    max-width: 96vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+
+/** media queris*/
