@@ -1,0 +1,18 @@
+/* Mobile first
+1. todo lo que este fuera de un media query es css enfocado al molvil(el mas pequeño)
+2. los mediaqueries van a atacar al siguiente dispositivo mas grande 
+3. las condiciones del media query deben atacar al ancho maximo (min-width)
+
+desktop firts 
+1. todo lo que este fuera de un media query es css enfocado en al desktop(el mas grande)
+2. los mediaqueries van a atacar al siguiente dispositivo mas paqueño
+3. condiciones del media query deben atacar al ancho maximo(max-width) */
+html{
+    font-size: 62.5%;            /** 16px * 0.625 =10px conversion en base 10*/
+}
+
+
+body{
+    background-color: red;
+    font-size: 1.4rem;
+}
