@@ -1,30 +1,29 @@
-/* Mobile first
-1. todo lo que este fuera de un media query es css enfocado al molvil(el mas pequeño)
-2. los mediaqueries van a atacar al siguiente dispositivo mas grande 
-3. las condiciones del media query deben atacar al ancho maximo (min-width)
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-desktop firts 
-1. todo lo que este fuera de un media query es css enfocado en al desktop(el mas grande)
-2. los mediaqueries van a atacar al siguiente dispositivo mas paqueño
-3. condiciones del media query deben atacar al ancho maximo(max-width) */
+:root {
+    /** Colors */
+    --Coral-Reef: #fe7e6b;
+    --Jacarta: #3a3d5d;
+    --Dark-Gunmetal: #25242c;
+    /** Fonts */
+    --overall-fontsize: 62.5%;
+}
 
 html,
-body{
+body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-html{
-    font-size: 62.5%;            /** 16px * 0.625 =10px conversion en base 10*/
+html {
+    font-size: var(--overall-fontsize);           /** 16px * 0.625 = 10px  Conversion en base 10*/
 }
 
-
-body{
-    font-size: 1.4rem;
-    background-color: pink;
+body {
+    font-size: 1.4rem;   
+    font-family: "Inter", sans-serif;       /** 14px; */
 }
-
 
 .main-container {
     max-height: 100vh;
@@ -32,54 +31,177 @@ body{
     flex-direction: column;
 }
 
-.main{
+/** Header */
+.header {
+    background-color: var(--Coral-Reef);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 8rem;
+    height: 8rem;
+}
+
+.logo-site {
+    text-decoration: none;
+    color: white;
+    font-size: 2.4rem;
+    font-weight: bolder;
+}
+
+.navbar__center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icone-hamburguers{
+    color: white;
+    font-size: 2.4rem;
+}
+
+.menu-main {
+    display: none;
+}
+
+.navbar__right {
+    display: none;
+}
+
+.menu-autenticacion {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0
+}
+
+.menu-autenticacion .item-3 {
+    display: none;
+}
+
+.btn {
+    border: 1px solid yellow;
+    padding: .6rem 1.2rem;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: white;
+    border: 1px solid white;
+    color: var(--Coral-Reef);
+}
+
+.btn-outline-primary {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-secundary {
+    border: 1px solid transparent;
+    color: white;
+}
+
+/** Main */
+.main {
     flex-grow: 1;
     max-height: 100vh;
     height: 100vh;
 }
 
-.container{
-    border: 2px dotted blue;
+/** Main-section call-to-action*/
+.section-call-to-action {
+    background: var(--Coral-Reef);
+    display: flex;
+    height: 44rem;
+    border-radius: 0 0 0 12rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+    margin: 4rem 0;
+}
+
+/** Footer */
+.footer {
+    background-color: var(--Dark-Gunmetal);
+}
+
+/** Media Queries */
+.container {
+    /* border: 2px dotted blue; */
     max-width: 96vw;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 0 .8rem;
 }
-
-.container-fluid{
-    border: 2px dotted orange;
-    min-width: 100vw;
+.container-fluid {
+    /* border: 2px dotted orange; */
+    max-width: 100vw;
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 0 .8rem;
+    padding: 0;
 }
-
-/** media queris*/
-
-
-@media( min-width: 56.7rem){
-    .container{
+/** Media Queries */
+@media ( min-width: 567px ) {
+    .container {
         max-width: 56rem;
         padding: 0 1.6rem;
     }
-} 
-
-@media ( min-width: 76.8rem){
-    .container{
+}
+@media ( min-width: 768px ) {
+    .container {
         max-width: 72rem;
         padding: 0 2.4rem;
     }
-}
+    
+    .navbar__left {
+        flex-basis: 14rem;
+    }
 
-@media ( min-width: 99.2rem ) {
-    .container{
+    .navbar__center {
+        flex-grow: 1;
+    }
+
+    .navbar__right {
+        display: block;
+        flex-basis: 15rem;
+    }
+
+    .menu-main {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .icone-hamburguers {
+        display: none;
+    }
+}
+@media ( min-width: 992px ) {
+    .container {
         max-width: 98rem;
         padding: 0 3.2rem;
     }
 }
-
-@media ( min-width: 120rem){
-    .container{
+@media ( min-width: 1200px ) {
+    .container {
         max-width: 114rem;
         padding: 0 4rem;
     }
